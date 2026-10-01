@@ -32,4 +32,3 @@ route::put('/toko/{id}', [TokoController::class, 'update']);
 Route::get('/produk-toko', [ProdukTokoController::class, 'index']);
 Route::get('/produk-toko/{id}', [ProdukTokoController::class, 'show']);
 Route::post('/toko/{tokoId}/produk-toko/{produkId}', [ProdukTokoController::class, 'store']);
-Route::

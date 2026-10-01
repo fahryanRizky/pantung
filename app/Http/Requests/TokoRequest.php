@@ -16,6 +16,7 @@ class TokoRequest extends FormRequest
             'nama_toko' => 'required',
             'alamat' => 'required',
             'user_id' => 'required',
+            'status' => 'required',
         ];
     }
 
@@ -24,6 +25,7 @@ class TokoRequest extends FormRequest
         return[
             'nama_toko.required' => 'nama toko wajib di isi',
             'alamat.required' => 'alamat toko wajib di isi',
+            'status.required' => 'tentukan status toko mu',
         ];
     }
 }

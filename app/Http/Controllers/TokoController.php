@@ -54,9 +54,22 @@ class TokoController extends Controller
         ]);
     }
 
-    public function update()
+    public function update(TokoRequest $request, $id)
     {
-        
+        $validated = $request->validated();
+
+        $toko = Toko::findOrFail($id);
+
+        $toko-> update([
+            'nama_toko' => $validated['nama_toko'],
+            'alamat' => $validated['alamat'],
+            'status' => $validated['status'],
+        ]);
+
+        return response()->json([
+            'message' => 'Toko berhasil diperbarui',
+            'data' => $toko,
+        ]);
     }
 
     public function isiToko($id)
