@@ -48,7 +48,8 @@ class ProdukController extends Controller
     {
         $validated = $request->validate([
             'nama_produk' => 'required',
-            'jenis_produk' => 'required|in:Fisik,Digital'
+            'jenis_produk' => 'required|in:Fisik,Digital',
+            'status' => 'required|in:Aktif,Nonaktif'
         ]);
 
         $produk = MasterProduk::findOrFail($id);
@@ -56,6 +57,7 @@ class ProdukController extends Controller
         $produk-> update([
             'nama_produk' => $validated['nama_produk'],
             'jenis_produk' => $validated['jenis_produk'],
+            'status' => $validated['status'],
         ]);
 
         return response()->json([

@@ -60,15 +60,11 @@ class TokoController extends Controller
 
         $toko = Toko::findOrFail($id);
 
-        $toko-> update([
-            'nama_toko' => $validated['nama_toko'],
-            'alamat' => $validated['alamat'],
-            'status' => $validated['status'],
-        ]);
+        $toko-> update($validated);
 
         return response()->json([
             'message' => 'Toko berhasil diperbarui',
-            'data' => $toko,
+            'data' => new TokoResource($toko),
         ]);
     }
 

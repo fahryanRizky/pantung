@@ -14,6 +14,7 @@ class Batch extends Model
         'stock_id',
         'nomor_batch',
         'jumlah',
+        'sisa_jumlah',
         'harga_modal',
         'tanggal_masuk'
     ];

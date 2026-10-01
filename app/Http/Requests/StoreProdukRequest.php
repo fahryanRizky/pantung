@@ -17,6 +17,7 @@ class StoreProdukRequest extends FormRequest
             'nama_produk' => 'required',
             'jenis_produk' => 'required|in:Fisik,Digital',
             'gambar' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'status' => 'required|in:Aktif,Nonaktif'
         ];
     }
     
@@ -26,6 +27,7 @@ class StoreProdukRequest extends FormRequest
             'nama_produk.required' => 'nama produk wajib di isi',
             'jenis_produk.required' => 'jenis produk wajib di isi',
             'jenis_produk.in' => 'jenis produk harus berupa Fisik atau Digital',
+            'status.in' => 'Aktifkan/Nonaktifkan produk'
         ];
     }
 }

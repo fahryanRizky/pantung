@@ -12,8 +12,10 @@ class TokoRequest extends FormRequest
 
     public function rules(): array
     {
+
+    $tokoId = $this->route('id') ?? $this->route('toko');
         return [
-            'nama_toko' => 'required',
+            'nama_toko' => 'required|string|max:255|unique',
             'alamat' => 'required',
             'user_id' => 'required',
             'status' => 'required',

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BatchController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProdukTokoController;
 use App\Http\Controllers\TokoController;
@@ -32,3 +33,7 @@ route::put('/toko/{id}', [TokoController::class, 'update']);
 Route::get('/produk-toko', [ProdukTokoController::class, 'index']);
 Route::get('/produk-toko/{id}', [ProdukTokoController::class, 'show']);
 Route::post('/toko/{tokoId}/produk-toko/{produkId}', [ProdukTokoController::class, 'store']);
+
+//batch
+Route::get('/toko/{tokoId}/produk-toko/{produkId}/batch', [BatchController::class, 'index']);
+Route::post('/toko/{tokoId}/produk-toko/{produkId}/batch', [BatchController::class, 'store']);
